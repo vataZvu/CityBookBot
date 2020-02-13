@@ -38,7 +38,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        streamMessage(update);
         Message message = update.getMessage();
         if(message != null && message.hasText()){
             switch (message.getText()) {
@@ -71,10 +70,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-    }
-
-    private void streamMessage(Update update){
-        System.out.println(update.getUpdateId()+ " " + update.getMessage().getText());
     }
 
     private boolean isAvailable(String cityName){
