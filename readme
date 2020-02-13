@@ -1,0 +1,4 @@
+bot.name = CityBookBot
+bot.token = 1067789389:AAE1otvH9HIS7wjA9Muj5i-cuoYP_FijoW8
+To run the application, you must import a mysql database. In the application properties file, change to spring.datasource.username=username and
+spring.datasource.password=password
