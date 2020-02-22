@@ -39,7 +39,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        if(message != null && message.hasText()){
+        if (message != null && message.hasText()) {
             switch (message.getText()) {
                 case "/start":
                     sendMsg(message, "Введите город по котору хотите посмотреть информацию: ");
@@ -52,7 +52,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }else{
+                    } else {
                         sendMsg(message, "К сожалению у нас нет информации по этому городу.");
                     }
             }
@@ -72,9 +72,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private boolean isAvailable(String cityName){
+    private boolean isAvailable(String cityName) {
         City city = cityService.getCityByName(cityName);
         if (city == null) return false;
         return true;
     }
+
+
 }
